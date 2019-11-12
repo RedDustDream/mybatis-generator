@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.mybatis.mapper.WashcarSubsidiaryOrderMapper">
+  <resultMap id="BaseResultMap" type="com.huang.mybatis.pojo.WashcarSubsidiaryOrder">
+    <constructor>
+      <arg column="FPHM" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CIRCLE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="HYDM" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="HYNAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="USER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="USER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="USER_MOBILE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WX_OPENID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CDATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="NET_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DEPID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MACHINE_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="OCR_DEVICE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CAR_PLATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WASH_TYP" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="STATUS" javaType="java.lang.Short" jdbcType="SMALLINT" />
+      <arg column="COUPON_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="COUPON_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAY_TYP" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="PAY_AMT" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="PAY_ORDER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CARD_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="TIMEMD5" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REMARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DATE1" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="DATE2" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="coupon_Type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="coupon_Amt" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="WASH_STATUS" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="get_money" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="favour_money" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="balance_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="mac" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="networkName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="str00" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="str01" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="str02" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="str03" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="flag00" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="flag01" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="flag02" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="flag03" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="str04" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="str05" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="str06" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="refunddate" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="reviewdate" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="reviewuser" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="retundstatus" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="refusereason" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="agent_typ" javaType="java.lang.Short" jdbcType="SMALLINT" />
+      <arg column="coupon_flag01" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="order_typ" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="foregin_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="foregin_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sub_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="timepart_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="buy_sl" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="vip_flag" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="worker_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="worker_info" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="worker_mobile" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="worker_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.huang.mybatis.pojo.WashcarSubsidiaryOrder">
+    insert into washcar_subsidiary_order (FPHM, CIRCLE_ID, HYDM, 
+      HYNAME, USER_ID, USER_NAME, 
+      USER_MOBILE, WX_OPENID, CDATE, 
+      NET_CODE, DEPID, MACHINE_CODE, 
+      OCR_DEVICE_ID, CAR_PLATE, WASH_TYP, 
+      STATUS, COUPON_CODE, COUPON_NAME, 
+      PAY_TYP, PAY_AMT, PAY_ORDER_ID, 
+      CARD_ID, TIMEMD5, REMARK, 
+      DATE1, DATE2, coupon_Type, 
+      coupon_Amt, WASH_STATUS, get_money, 
+      favour_money, balance_type, mac, 
+      networkName, str00, str01, 
+      str02, str03, flag00, 
+      flag01, flag02, flag03, 
+      str04, str05, str06, 
+      refunddate, reviewdate, reviewuser, 
+      retundstatus, refusereason, agent_typ, 
+      coupon_flag01, order_typ, foregin_id, 
+      foregin_name, sub_date, timepart_id, 
+      buy_sl, vip_flag, worker_id, 
+      worker_info, worker_mobile, worker_date
+      )
+    values (#{fphm,jdbcType=VARCHAR}, #{circleId,jdbcType=VARCHAR}, #{hydm,jdbcType=VARCHAR}, 
+      #{hyname,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userMobile,jdbcType=VARCHAR}, #{wxOpenid,jdbcType=VARCHAR}, #{cdate,jdbcType=TIMESTAMP}, 
+      #{netCode,jdbcType=VARCHAR}, #{depid,jdbcType=VARCHAR}, #{machineCode,jdbcType=VARCHAR}, 
+      #{ocrDeviceId,jdbcType=VARCHAR}, #{carPlate,jdbcType=VARCHAR}, #{washTyp,jdbcType=VARCHAR}, 
+      #{status,jdbcType=SMALLINT}, #{couponCode,jdbcType=VARCHAR}, #{couponName,jdbcType=VARCHAR}, 
+      #{payTyp,jdbcType=TINYINT}, #{payAmt,jdbcType=DECIMAL}, #{payOrderId,jdbcType=VARCHAR}, 
+      #{cardId,jdbcType=VARCHAR}, #{timemd5,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{date1,jdbcType=TIMESTAMP}, #{date2,jdbcType=TIMESTAMP}, #{couponType,jdbcType=INTEGER}, 
+      #{couponAmt,jdbcType=DECIMAL}, #{washStatus,jdbcType=INTEGER}, #{getMoney,jdbcType=DECIMAL}, 
+      #{favourMoney,jdbcType=DECIMAL}, #{balanceType,jdbcType=INTEGER}, #{mac,jdbcType=VARCHAR}, 
+      #{networkname,jdbcType=VARCHAR}, #{str00,jdbcType=VARCHAR}, #{str01,jdbcType=VARCHAR}, 
+      #{str02,jdbcType=VARCHAR}, #{str03,jdbcType=VARCHAR}, #{flag00,jdbcType=INTEGER}, 
+      #{flag01,jdbcType=INTEGER}, #{flag02,jdbcType=INTEGER}, #{flag03,jdbcType=INTEGER}, 
+      #{str04,jdbcType=VARCHAR}, #{str05,jdbcType=VARCHAR}, #{str06,jdbcType=VARCHAR}, 
+      #{refunddate,jdbcType=TIMESTAMP}, #{reviewdate,jdbcType=TIMESTAMP}, #{reviewuser,jdbcType=VARCHAR}, 
+      #{retundstatus,jdbcType=INTEGER}, #{refusereason,jdbcType=VARCHAR}, #{agentTyp,jdbcType=SMALLINT}, 
+      #{couponFlag01,jdbcType=INTEGER}, #{orderTyp,jdbcType=INTEGER}, #{foreginId,jdbcType=BIGINT}, 
+      #{foreginName,jdbcType=VARCHAR}, #{subDate,jdbcType=TIMESTAMP}, #{timepartId,jdbcType=BIGINT}, 
+      #{buySl,jdbcType=INTEGER}, #{vipFlag,jdbcType=INTEGER}, #{workerId,jdbcType=BIGINT}, 
+      #{workerInfo,jdbcType=VARCHAR}, #{workerMobile,jdbcType=VARCHAR}, #{workerDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.huang.mybatis.pojo.WashcarSubsidiaryOrder">
+    insert into washcar_subsidiary_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fphm != null">
+        FPHM,
+      </if>
+      <if test="circleId != null">
+        CIRCLE_ID,
+      </if>
+      <if test="hydm != null">
+        HYDM,
+      </if>
+      <if test="hyname != null">
+        HYNAME,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userMobile != null">
+        USER_MOBILE,
+      </if>
+      <if test="wxOpenid != null">
+        WX_OPENID,
+      </if>
+      <if test="cdate != null">
+        CDATE,
+      </if>
+      <if test="netCode != null">
+        NET_CODE,
+      </if>
+      <if test="depid != null">
+        DEPID,
+      </if>
+      <if test="machineCode != null">
+        MACHINE_CODE,
+      </if>
+      <if test="ocrDeviceId != null">
+        OCR_DEVICE_ID,
+      </if>
+      <if test="carPlate != null">
+        CAR_PLATE,
+      </if>
+      <if test="washTyp != null">
+        WASH_TYP,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="couponCode != null">
+        COUPON_CODE,
+      </if>
+      <if test="couponName != null">
+        COUPON_NAME,
+      </if>
+      <if test="payTyp != null">
+        PAY_TYP,
+      </if>
+      <if test="payAmt != null">
+        PAY_AMT,
+      </if>
+      <if test="payOrderId != null">
+        PAY_ORDER_ID,
+      </if>
+      <if test="cardId != null">
+        CARD_ID,
+      </if>
+      <if test="timemd5 != null">
+        TIMEMD5,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="date1 != null">
+        DATE1,
+      </if>
+      <if test="date2 != null">
+        DATE2,
+      </if>
+      <if test="couponType != null">
+        coupon_Type,
+      </if>
+      <if test="couponAmt != null">
+        coupon_Amt,
+      </if>
+      <if test="washStatus != null">
+        WASH_STATUS,
+      </if>
+      <if test="getMoney != null">
+        get_money,
+      </if>
+      <if test="favourMoney != null">
+        favour_money,
+      </if>
+      <if test="balanceType != null">
+        balance_type,
+      </if>
+      <if test="mac != null">
+        mac,
+      </if>
+      <if test="networkname != null">
+        networkName,
+      </if>
+      <if test="str00 != null">
+        str00,
+      </if>
+      <if test="str01 != null">
+        str01,
+      </if>
+      <if test="str02 != null">
+        str02,
+      </if>
+      <if test="str03 != null">
+        str03,
+      </if>
+      <if test="flag00 != null">
+        flag00,
+      </if>
+      <if test="flag01 != null">
+        flag01,
+      </if>
+      <if test="flag02 != null">
+        flag02,
+      </if>
+      <if test="flag03 != null">
+        flag03,
+      </if>
+      <if test="str04 != null">
+        str04,
+      </if>
+      <if test="str05 != null">
+        str05,
+      </if>
+      <if test="str06 != null">
+        str06,
+      </if>
+      <if test="refunddate != null">
+        refunddate,
+      </if>
+      <if test="reviewdate != null">
+        reviewdate,
+      </if>
+      <if test="reviewuser != null">
+        reviewuser,
+      </if>
+      <if test="retundstatus != null">
+        retundstatus,
+      </if>
+      <if test="refusereason != null">
+        refusereason,
+      </if>
+      <if test="agentTyp != null">
+        agent_typ,
+      </if>
+      <if test="couponFlag01 != null">
+        coupon_flag01,
+      </if>
+      <if test="orderTyp != null">
+        order_typ,
+      </if>
+      <if test="foreginId != null">
+        foregin_id,
+      </if>
+      <if test="foreginName != null">
+        foregin_name,
+      </if>
+      <if test="subDate != null">
+        sub_date,
+      </if>
+      <if test="timepartId != null">
+        timepart_id,
+      </if>
+      <if test="buySl != null">
+        buy_sl,
+      </if>
+      <if test="vipFlag != null">
+        vip_flag,
+      </if>
+      <if test="workerId != null">
+        worker_id,
+      </if>
+      <if test="workerInfo != null">
+        worker_info,
+      </if>
+      <if test="workerMobile != null">
+        worker_mobile,
+      </if>
+      <if test="workerDate != null">
+        worker_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fphm != null">
+        #{fphm,jdbcType=VARCHAR},
+      </if>
+      <if test="circleId != null">
+        #{circleId,jdbcType=VARCHAR},
+      </if>
+      <if test="hydm != null">
+        #{hydm,jdbcType=VARCHAR},
+      </if>
+      <if test="hyname != null">
+        #{hyname,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null">
+        #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="wxOpenid != null">
+        #{wxOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="cdate != null">
+        #{cdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="netCode != null">
+        #{netCode,jdbcType=VARCHAR},
+      </if>
+      <if test="depid != null">
+        #{depid,jdbcType=VARCHAR},
+      </if>
+      <if test="machineCode != null">
+        #{machineCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ocrDeviceId != null">
+        #{ocrDeviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="carPlate != null">
+        #{carPlate,jdbcType=VARCHAR},
+      </if>
+      <if test="washTyp != null">
+        #{washTyp,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="couponCode != null">
+        #{couponCode,jdbcType=VARCHAR},
+      </if>
+      <if test="couponName != null">
+        #{couponName,jdbcType=VARCHAR},
+      </if>
+      <if test="payTyp != null">
+        #{payTyp,jdbcType=TINYINT},
+      </if>
+      <if test="payAmt != null">
+        #{payAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="payOrderId != null">
+        #{payOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="cardId != null">
+        #{cardId,jdbcType=VARCHAR},
+      </if>
+      <if test="timemd5 != null">
+        #{timemd5,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="date1 != null">
+        #{date1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="date2 != null">
+        #{date2,jdbcType=TIMESTAMP},
+      </if>
+      <if test="couponType != null">
+        #{couponType,jdbcType=INTEGER},
+      </if>
+      <if test="couponAmt != null">
+        #{couponAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="washStatus != null">
+        #{washStatus,jdbcType=INTEGER},
+      </if>
+      <if test="getMoney != null">
+        #{getMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="favourMoney != null">
+        #{favourMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="balanceType != null">
+        #{balanceType,jdbcType=INTEGER},
+      </if>
+      <if test="mac != null">
+        #{mac,jdbcType=VARCHAR},
+      </if>
+      <if test="networkname != null">
+        #{networkname,jdbcType=VARCHAR},
+      </if>
+      <if test="str00 != null">
+        #{str00,jdbcType=VARCHAR},
+      </if>
+      <if test="str01 != null">
+        #{str01,jdbcType=VARCHAR},
+      </if>
+      <if test="str02 != null">
+        #{str02,jdbcType=VARCHAR},
+      </if>
+      <if test="str03 != null">
+        #{str03,jdbcType=VARCHAR},
+      </if>
+      <if test="flag00 != null">
+        #{flag00,jdbcType=INTEGER},
+      </if>
+      <if test="flag01 != null">
+        #{flag01,jdbcType=INTEGER},
+      </if>
+      <if test="flag02 != null">
+        #{flag02,jdbcType=INTEGER},
+      </if>
+      <if test="flag03 != null">
+        #{flag03,jdbcType=INTEGER},
+      </if>
+      <if test="str04 != null">
+        #{str04,jdbcType=VARCHAR},
+      </if>
+      <if test="str05 != null">
+        #{str05,jdbcType=VARCHAR},
+      </if>
+      <if test="str06 != null">
+        #{str06,jdbcType=VARCHAR},
+      </if>
+      <if test="refunddate != null">
+        #{refunddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewdate != null">
+        #{reviewdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewuser != null">
+        #{reviewuser,jdbcType=VARCHAR},
+      </if>
+      <if test="retundstatus != null">
+        #{retundstatus,jdbcType=INTEGER},
+      </if>
+      <if test="refusereason != null">
+        #{refusereason,jdbcType=VARCHAR},
+      </if>
+      <if test="agentTyp != null">
+        #{agentTyp,jdbcType=SMALLINT},
+      </if>
+      <if test="couponFlag01 != null">
+        #{couponFlag01,jdbcType=INTEGER},
+      </if>
+      <if test="orderTyp != null">
+        #{orderTyp,jdbcType=INTEGER},
+      </if>
+      <if test="foreginId != null">
+        #{foreginId,jdbcType=BIGINT},
+      </if>
+      <if test="foreginName != null">
+        #{foreginName,jdbcType=VARCHAR},
+      </if>
+      <if test="subDate != null">
+        #{subDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timepartId != null">
+        #{timepartId,jdbcType=BIGINT},
+      </if>
+      <if test="buySl != null">
+        #{buySl,jdbcType=INTEGER},
+      </if>
+      <if test="vipFlag != null">
+        #{vipFlag,jdbcType=INTEGER},
+      </if>
+      <if test="workerId != null">
+        #{workerId,jdbcType=BIGINT},
+      </if>
+      <if test="workerInfo != null">
+        #{workerInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="workerMobile != null">
+        #{workerMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="workerDate != null">
+        #{workerDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
